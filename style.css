@@ -5,9 +5,15 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Global */
+
 body {
     background: #e5e5e5;
     color: #25282B;
+}
+
+body.hideScroll {
+    overflow: hidden;
 }
 
 a {
@@ -26,6 +32,32 @@ p, .description {
     letter-spacing: 0.1px;
 }
 
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: #ff5E84;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+}
+
+.button:hover {
+    background-color: #0984E3;
+    text-decoration: none;
+}
+
+/* Padrão */
+
 #container {
     width: 90%;
     max-width: 980px;
@@ -38,7 +70,7 @@ p, .description {
 #intro {
     width: 300px;
 
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
 main {
@@ -76,22 +108,6 @@ button {
 
 button:hover {
     text-decoration: underline;
-}
-
-button.fat {
-    color: white;
-    background: #ff5E84;
-
-    width: 150px;
-    height: 40px;
-
-    border-radius: 6px;
-
-    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
-}
-
-button.fat:hover {
-    text-decoration: none;
 }
 
 footer {
@@ -148,9 +164,9 @@ footer a {
 
     position: absolute;
     top: 0;
-
-    width: 100vw;
-    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     display: flex;
     justify-content: center;
@@ -158,8 +174,12 @@ footer a {
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
+
 #modal .content {
-    margin-top: 50px;
+    margin-top: 3%;
 
     color: white;
 }
@@ -173,7 +193,7 @@ footer a {
     width: 80%;
     max-width: 800px;
 
-    margin: 0 auto;
+    margin: 0 auto 10%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -219,6 +239,8 @@ form a {
 
     align-self: end;
     transition: 400ms;
+
+    margin-bottom: 10%;
 }
 
 form a:hover {
@@ -238,6 +260,7 @@ form button {
     cursor: pointer;
 
     margin-top: 32px;
+    margin-bottom: 10%;
 
     grid-column: 2;
     justify-self: end;
@@ -255,4 +278,67 @@ form button:hover {
 #modal.hide {
     opacity: 0;
     visibility: hidden;
+}
+
+/* IDEAS.html */
+
+#page-ideas #container {
+    display: block;
+}
+
+#page-ideas header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#page-ideas nav {
+    display: flex;
+
+    align-items: center;
+}
+
+#page-ideas nav li {
+    list-style-type: none;
+    margin-right: 16px;
+}
+
+#page-ideas nav li a {
+    color: #25282B;
+}
+
+#page-ideas nav li a.button {
+    color: white;
+}
+
+#page-ideas nav li:last-child {
+    margin: 0;
+}
+
+section#title {
+    text-align: center;
+}
+
+section#title p {
+    opacity: 0.7;
+}
+
+section#title h1 {
+    font-size: 28px;
+}
+
+section#ideas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+section#ideas .idea {
+    margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+    margin-top: 64px;
 }
