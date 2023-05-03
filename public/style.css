@@ -162,7 +162,7 @@ footer a {
 #modal {
     background-color: #ff5E84;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -174,9 +174,9 @@ footer a {
     transition: 400ms;
 }
 
-/* #modal.addScroll {
+#modal.addScroll {
     overflow: auto;
-} */
+}
 
 #modal .content {
     margin-top: 3%;
