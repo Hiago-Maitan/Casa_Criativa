@@ -9,8 +9,35 @@ function onOff() {
         .classList
         .toggle("hideScroll")
 
-     document
+    document
         .querySelector("#modal")
         .classList
         .toggle("addScroll")
+}
+
+function checkFields(event) {
+
+    const valuesToCheck = [
+        "title",
+        "image",
+        "category",
+        "description",
+        "link"
+    ]
+
+    const isEmpty = typeof valuesToCheck.find(function (value) {
+
+        const checkIfIsString = typeof event.target[value].value === "string"
+        const checkIfIsEmpty = !event.target[value].value.trim()
+
+        if (checkIfIsString && checkIfIsEmpty) {
+            return true
+        }
+    })
+
+    if (isEmpty) {
+        event.preventDefault()
+        alert("Preencha os campos")
+    }
+
 }
